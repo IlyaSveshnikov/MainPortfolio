@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07070a" />
+
+  <title>Илья Свешников — веб‑разработчик</title>
+  <meta name="description" content="Веб‑разработчик: проектирую и довожу продукты до продакшена — от UI до сервера. Красивый UI, плавные анимации, ИИ внутри продукта. Портфолио, кейсы, контакты." />
+  <meta name="author" content="Илья Свешников" />
+  <link rel="canonical" href="/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Илья Свешников — веб‑разработчик" />
+  <meta property="og:description" content="Проектирую и довожу продукты до продакшена: красивый UI, плавные анимации, ИИ внутри продукта." />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Илья Свешников — веб‑разработчик" />
+  <meta name="twitter:description" content="Проектирую и довожу продукты до продакшена: UI, анимации, ИИ внутри продукта." />
+  <meta name="twitter:image" content="assets/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a href="#top" class="skip-link">К содержимому</a>
+
+  <!-- ПРЕЛОАДЕР -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="46" height="46"><defs><linearGradient id="lgPre" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ccf24c"/><stop offset=".5" stop-color="#35e0c6"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs><rect width="100" height="100" rx="26" fill="url(#lgPre)"/><circle cx="50" cy="24" r="8" fill="#0a0a12"/><path d="M50 42 V76" fill="none" stroke="#0a0a12" stroke-width="15" stroke-linecap="round"/></svg></div>
+      <div class="preloader__counter"><span id="preloaderCount">0</span><span class="preloader__pct">%</span></div>
+      <div class="preloader__bar"><span id="preloaderBar"></span></div>
+    </div>
+  </div>
+
+  <!-- КУРСОР -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot" id="cursorDot"></div>
+    <div class="cursor__ring" id="cursorRing"><span class="cursor__label" id="cursorLabel"></span></div>
+  </div>
+
+  <!-- ФОН -->
+  <canvas class="bg-canvas" id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="bg-scrim" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ШАПКА -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-cursor="mark" aria-label="В начало">
+      <span class="nav__logo-mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="25" height="25"><defs><linearGradient id="lgNav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ccf24c"/><stop offset=".5" stop-color="#35e0c6"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs><rect width="100" height="100" rx="26" fill="url(#lgNav)"/><circle cx="50" cy="24" r="8" fill="#0a0a12"/><path d="M50 42 V76" fill="none" stroke="#0a0a12" stroke-width="15" stroke-linecap="round"/></svg></span>
+      <span class="nav__logo-text">илья<span class="accent">.sveshnikov</span></span>
+    </a>
+    <nav class="nav__menu" aria-label="Основная навигация">
+      <a href="#about" class="nav__link"><span>01</span> Обо мне</a>
+      <a href="#skills" class="nav__link"><span>02</span> Навыки</a>
+      <a href="#works" class="nav__link"><span>03</span> Работы</a>
+      <a href="#process" class="nav__link"><span>04</span> Процесс</a>
+      <a href="#contact" class="nav__link"><span>05</span> Контакты</a>
+    </nav>
+    <a href="#contact" class="nav__cta" data-cursor="link">Написать<span class="nav__cta-dot"></span></a>
+    <button class="nav__burger" id="navBurger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <!-- Мобильное меню -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#about" class="mobile-menu__link"><span>01</span> Обо мне</a>
+    <a href="#skills" class="mobile-menu__link"><span>02</span> Навыки</a>
+    <a href="#works" class="mobile-menu__link"><span>03</span> Работы</a>
+    <a href="#process" class="mobile-menu__link"><span>04</span> Процесс</a>
+    <a href="#contact" class="mobile-menu__link"><span>05</span> Контакты</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ГЕРОЙ -->
+    <section class="hero" id="hero">
+      <div class="hero__status" id="heroStatus" data-reveal>
+        <span class="hero__status-dot"></span>
+        Открыт к проектам и предложениям
+      </div>
+
+      <h1 class="hero__title">
+        <span class="line"><span class="line__inner" style="--d:.05s">Атмосферные</span></span>
+        <span class="line"><span class="line__inner accent-word" style="--d:.12s">digital‑продукты</span></span>
+        <span class="line"><span class="line__inner" style="--d:.19s">под ключ<span class="hero__period">.</span></span></span>
+      </h1>
+
+      <div class="hero__meta">
+        <div>
+          <p class="hero__lead" data-reveal style="--d:.35s">
+            Веб‑разработчик. Проектирую и довожу продукты до продакшена — от интерфейса до сервера.
+            Красивый UI, плавные анимации и&nbsp;<span class="hl">код, который я понимаю и контролирую</span>;
+            AI‑ассистенты лишь ускоряют работу.
+          </p>
+          <div class="hero__links" id="heroLinks" data-reveal style="--d:.55s"><!-- GitHub / Резюме из SITE --></div>
+        </div>
+        <div class="hero__actions" data-reveal style="--d:.45s">
+          <a href="#works" class="btn btn--primary" data-cursor="link">
+            <span>Смотреть работы</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost" data-cursor="link"><span>Связаться</span></a>
+        </div>
+      </div>
+
+      <a href="#stats" class="hero__scroll" aria-label="Прокрутить вниз" data-cursor="mark">
+        <span>Листай</span><span class="hero__scroll-line"><i></i></span>
+      </a>
+    </section>
+
+    <!-- БЕГУЩАЯ СТРОКА -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>UI / UX</span><span class="dot">✳</span><span>React</span><span class="dot">✳</span><span>Next.js</span><span class="dot">✳</span><span>Плавные анимации</span><span class="dot">✳</span><span>ИИ‑ассистенты</span><span class="dot">✳</span><span>Автоматизация</span><span class="dot">✳</span><span>Под ключ</span><span class="dot">✳</span><span>Интеграции API</span><span class="dot">✳</span>
+        <span>UI / UX</span><span class="dot">✳</span><span>React</span><span class="dot">✳</span><span>Next.js</span><span class="dot">✳</span><span>Плавные анимации</span><span class="dot">✳</span><span>ИИ‑ассистенты</span><span class="dot">✳</span><span>Автоматизация</span><span class="dot">✳</span><span>Под ключ</span><span class="dot">✳</span><span>Интеграции API</span><span class="dot">✳</span>
+      </div>
+    </div>
+
+    <!-- ЦИФРЫ -->
+    <section class="stats-strip" id="stats">
+      <div class="stats-grid" id="statsGrid"><!-- рендерится из SITE.stats --></div>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section class="section about" id="about">
+      <div class="section__head"><span class="section__label" data-reveal>01 — Обо мне</span></div>
+
+      <p class="about__statement" data-reveal>
+        Сочетаю <em>инженерный подход</em>, чувство стиля и современные технологии.
+        Веду проект <em>от идеи до продакшена</em> — дизайн, код, сервер, домен.
+        Результат — не просто сайт, а <em>продукт</em>, который решает задачу.
+      </p>
+
+      <div class="about__edu" id="aboutEdu" data-reveal><!-- образование из SITE --></div>
+
+      <div class="about__grid">
+        <article class="value" data-reveal style="--d:.05s" data-cursor="tilt">
+          <span class="value__num">(01)</span>
+          <h3 class="value__title">Под ключ</h3>
+          <p class="value__text">Проектирование, вёрстка, код, сервер и домен — весь цикл на мне. Без посредников и потерь в коммуникации.</p>
+        </article>
+        <article class="value" data-reveal style="--d:.12s" data-cursor="tilt">
+          <span class="value__num">(02)</span>
+          <h3 class="value__title">Код под контролем</h3>
+          <p class="value__text">Высшее ИТ‑образование. Пишу и читаю код осознанно: AI‑ассистенты ускоряют, но каждое решение проверяю, оптимизирую и понимаю.</p>
+        </article>
+        <article class="value" data-reveal style="--d:.19s" data-cursor="tilt">
+          <span class="value__num">(03)</span>
+          <h3 class="value__title">ИИ внутри продукта</h3>
+          <p class="value__text">Чат‑боты и ассистенты, автоматизация рутины, интеграции с API — продукт берёт часть работы на себя.</p>
+        </article>
+        <article class="value" data-reveal style="--d:.26s" data-cursor="tilt">
+          <span class="value__num">(04)</span>
+          <h3 class="value__title">Атмосфера</h3>
+          <p class="value__text">Не просто страницы, а digital‑продукты: продуманный UI, плавные анимации и внимание к деталям.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- НАВЫКИ -->
+    <section class="section skills" id="skills">
+      <div class="section__head">
+        <span class="section__label" data-reveal>02 — Навыки</span>
+        <h2 class="section__title" data-reveal>Стек, на&nbsp;котором<br/>всё <span class="accent-word">держится</span></h2>
+      </div>
+      <div class="skills__groups" id="skillsGroups"><!-- рендерится из SITE.skills --></div>
+    </section>
+
+    <!-- РАБОТЫ -->
+    <section class="section works" id="works">
+      <div class="section__head works__head">
+        <div>
+          <span class="section__label" data-reveal>03 — Работы</span>
+          <h2 class="section__title" data-reveal>Избранные<br/><span class="accent-word">проекты</span></h2>
+        </div>
+        <div class="works__filters" id="worksFilters" data-reveal><!-- фильтры из SITE --></div>
+      </div>
+      <div class="works__grid" id="worksGrid"><!-- карточки из SITE.projects --></div>
+    </section>
+
+    <!-- ПРОЦЕСС -->
+    <section class="section process" id="process">
+      <div class="section__head">
+        <span class="section__label" data-reveal>04 — Как я работаю</span>
+        <h2 class="section__title" data-reveal>От брифа<br/>до <span class="accent-word">запуска</span></h2>
+      </div>
+      <div class="process__grid" id="processGrid"><!-- шаги из SITE.process --></div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section contact" id="contact">
+      <span class="section__label" data-reveal>05 — Контакты</span>
+      <h2 class="contact__title" data-reveal>Давайте создадим<br/>что‑то <span class="accent-word">атмосферное</span></h2>
+      <div class="contact__list" id="contactList"><!-- контакты из SITE.socials --></div>
+      <div class="contact__cta" id="contactCta" data-reveal><!-- «Обсудить проект» + «Резюме» --></div>
+    </section>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="footer">
+    <div class="footer__row">
+      <span class="footer__brand">илья<span class="accent">.sveshnikov</span></span>
+      <div class="footer__socials" id="footerSocials"><!-- иконки из SITE.socials --></div>
+      <span class="footer__status">
+        <span class="footer__clock" id="footerClock">--:--:--</span>
+        <span class="footer__loc">по вашему времени</span>
+      </span>
+    </div>
+    <div class="footer__row footer__row--btm">
+      <span>© <span id="year">2026</span> — Сделано вручную. Без шаблонов.</span>
+      <a href="#top" class="footer__top" data-cursor="mark">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <!-- КЕЙС-МОДАЛКА -->
+  <div class="modal" id="caseModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="caseTitle">
+      <button class="modal__close" data-close aria-label="Закрыть кейс">✕</button>
+      <div class="modal__body" id="caseBody"><!-- наполняется из JS --></div>
+    </div>
+  </div>
+
+  <!-- Тост -->
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

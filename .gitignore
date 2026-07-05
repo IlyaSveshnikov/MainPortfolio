@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+.AppleDouble
+Thumbs.db
+
+# Редакторы / IDE
+.vscode/
+.idea/
+*.swp
+
+# Личные заметки
+todo
+todo.txt
+
+# Логи и временное
+*.log
+zz*.html

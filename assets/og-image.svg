@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ccf24c"/>
+      <stop offset="0.55" stop-color="#35e0c6"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#07070a"/>
+  <g filter="url(#blur)" opacity="0.9">
+    <circle cx="220" cy="170" r="240" fill="#7c5cff" opacity="0.38"/>
+    <circle cx="1040" cy="120" r="210" fill="#35e0c6" opacity="0.28"/>
+    <circle cx="980" cy="560" r="240" fill="#ccf24c" opacity="0.16"/>
+  </g>
+  <rect x="24" y="24" width="1152" height="582" rx="28" fill="none" stroke="rgba(255,255,255,0.10)"/>
+
+  <!-- Вордмарк -->
+  <text x="80" y="108" font-family="monospace" font-size="30" fill="#ccf24c">✳</text>
+  <text x="118" y="110" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#edede8">илья<tspan fill="#ccf24c">.sveshnikov</tspan></text>
+
+  <!-- Заголовок -->
+  <text x="78" y="330" font-family="Arial, sans-serif" font-size="92" font-weight="800" fill="#edede8">Веб-разработчик</text>
+  <text x="78" y="430" font-family="Arial, sans-serif" font-size="64" font-weight="800" fill="url(#accent)">digital-продукты под ключ</text>
+
+  <!-- Низ -->
+  <text x="80" y="558" font-family="monospace" font-size="26" fill="rgba(237,237,232,0.6)">Портфолио · Кейсы · Контакты</text>
+  <text x="1120" y="558" text-anchor="end" font-family="monospace" font-size="26" fill="#ccf24c">@pita_chok</text>
+</svg>
