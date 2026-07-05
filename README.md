@@ -3,7 +3,7 @@
 Атмосферный сайт-портфолио веб-разработчика на чистых **HTML / CSS / JS**: WebGL-фон,
 кастомный курсор, 3D-наклон карточек и параллакс, кейсы проектов и резюме. Без сборки и зависимостей.
 
-**Демо:** появится после публикации на GitHub Pages · **Резюме:** [resume.html](resume.html)
+**🔗 Демо:** [ilyasveshnikov.github.io/MainPortfolio](https://ilyasveshnikov.github.io/MainPortfolio/) · **Резюме:** [resume.html](resume.html)
 
 ![Превью портфолио](assets/preview.png)
 
