@@ -45,4 +45,4 @@ assets/         скриншоты, обложки, иконка, og-image, ре
 
 ---
 
-<sub>Сделано вручную, без шаблонов · Telegram [@pita_chok](https://t.me/pita_chok)</sub>
+<sub>Сделано вручную, без шаблонов · Telegram [@ilya_svesh](https://t.me/ilya_svesh)</sub>

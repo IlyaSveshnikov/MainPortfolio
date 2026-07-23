@@ -13,7 +13,7 @@ const SITE = {
     github:   "https://github.com/IlyaSveshnikov",
     linkedin: "",
     hh:       "",
-    telegram: "https://t.me/pita_chok",
+    telegram: "https://t.me/ilya_svesh",
     email:    "ilya-svesh-1@yandex.ru",
     phone:    "+79093285797",
   },
